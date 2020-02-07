@@ -2,14 +2,19 @@
   <agm-map
     [latitude]="latitude"
     [longitude]="longitude"
-    [zoom]="10"
+    [zoom]="4"
     [disableDefaultUI]="false"
-    [zoomControl]="false"
-    (mapClick)="mapOnClickListener($event)">
-
+    [zoomControl]="false">
+    <!-- (mapClick)="mapOnClickListener($event)" -->
     <agm-marker 
       *ngFor="let place of places; let i = index"
       (markerClick)="markerOnClickListener(place, i)"
+      [iconUrl]="{
+        url: 'http://simpleicon.com/wp-content/uploads/rocket.png',
+        scaledSize: {
+            width: 40,
+            height: 60
+        }}"
       [latitude]="place.lat"
       [longitude]="place.lng">
       

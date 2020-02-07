@@ -12,15 +12,15 @@ export class GooglemapService {
 
   constructor() { }
 
-  public getPosition () {
-    return Observable.create((observer) => {
-      navigator.geolocation.watchPosition((position: Position) => {
-        this.place = { lat: position.coords.latitude, lng: position.coords.longitude };
-        this.places.push(this.place);
-        observer.next(position);
-      });
-    });
-  }
+  // public getPosition () {
+  //   return Observable.create((observer) => {
+  //     navigator.geolocation.watchPosition((position: Position) => {
+  //       this.place = { lat: position.coords.latitude, lng: position.coords.longitude };
+  //       this.places.push(this.place);
+  //       observer.next(position);
+  //     });
+  //   });
+  // }
 
   addPlaceOnMapClick (event) {
     this.place = { lat: event.coords.lat, lng: event.coords.lng };
@@ -28,8 +28,8 @@ export class GooglemapService {
     return this.places;
   }
 
-  getPlaces () {
-    return this.places;
-  }
+  // getPlaces () {
+  //   return this.places;
+  // }
 
 }
